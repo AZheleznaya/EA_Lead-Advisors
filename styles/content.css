@@ -1,0 +1,271 @@
+.content {
+    padding: 93px 0 76px;
+    position: relative;
+    z-index: 2;
+}
+
+.content__description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: 0.3s;
+    animation: show 1s 1;
+    animation-fill-mode: forwards;
+    animation-delay: 0.5s;
+}
+
+.content__description_title {
+    padding-bottom: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 72px;
+    line-height: 75px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #162C4E;
+    opacity: 0.39;
+}
+
+.content__description_text {
+    max-width: 423px;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.countdown {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 32px 0 72px;
+    opacity: 0;
+    transition: 0.3s;
+    animation: show 1s 1;
+    animation-fill-mode: forwards;
+    animation-delay: 0.9s;
+}
+
+#days,
+#hours,
+#minutes,
+#seconds,
+.countdown__separator {
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 72px;
+    line-height: 72px;
+    text-align: center;
+    color: #162C4E;
+}
+
+#days::after,
+#hours::after,
+#minutes::after,
+#seconds::after {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3px;
+    width: 132px;
+    height: 54px;
+    background: url("../assets/image/wave.svg") no-repeat;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 16px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+#days::after,
+#hours::after,
+#minutes::after {
+    margin-right: 1px;
+}
+
+#days::after {
+    content: "Days";
+}
+
+#hours::after {
+    content: "Hours";
+}
+
+#minutes::after {
+    content: "Minutes";
+}
+
+#seconds::after {
+    content: "Seconds";
+}
+
+.content__event-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: 0.3s;
+    animation: show 1s 1;
+    animation-fill-mode: forwards;
+    animation-delay: 1.1s;
+}
+
+.content__event-box_text {
+    padding-bottom: 12px;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.content__event-box_button {
+    padding: 16px 20px 17px 28px;
+    display: flex;
+    gap: 32px;
+    border-radius: 40px;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+    color: #FFFFFF;
+    background: #1D4169;
+    cursor: pointer;
+}
+
+.content__event-box_button:hover {
+    background: #162C4E;
+    opacity: 0.8;
+    transition: 0.5s;
+}
+
+@media screen and (min-width: 993px) {
+    section.content {
+        min-height: calc(100vh - 317px);
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .content {
+        padding: 166px 0 169px;
+    }
+
+    .content__description_title {
+        padding-bottom: 20px;
+        font-size: 36px;
+        line-height: 37px;
+    }
+
+    .content__description_text {
+        max-width: 286px;
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .countdown {
+        padding: 40px 0;
+    }
+
+    #days,
+    #hours,
+    #minutes,
+    #seconds,
+    .countdown__separator {
+        font-size: 36px;
+        line-height: 36px;
+    }
+
+    #days::after,
+    #hours::after,
+    #minutes::after,
+    #seconds::after {
+        background: url("../assets/image/wave_tablet.svg") no-repeat;
+        width: 64px;
+        height: 40px;
+        margin-top: 6px;
+        font-size: 12px;
+        line-height: 12px;
+    }
+
+    #days::after,
+    #hours::after,
+    #minutes::after {
+        margin-right: 12px;
+    }
+
+    #hours::after,
+    #minutes::after,
+    #seconds::after {
+        margin-left: 12px;
+    }
+
+    #days::after {
+        content: "DD";
+    }
+
+    #hours::after {
+        content: "HH";
+    }
+
+    #minutes::after {
+        content: "MM";
+    }
+
+    #seconds::after {
+        content: "SS";
+    }
+
+    .content__event-box_text {
+        padding-bottom: 15px;
+        font-size: 16px;
+        line-height: 24px;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .content {
+        padding: 66px 20px 86px;
+    }
+
+    .content__description_title {
+        padding-bottom: 16px;
+    }
+
+    #days::after,
+    #hours::after,
+    #minutes::after {
+        margin-right: 4px;
+    }
+
+    #hours::after,
+    #minutes::after,
+    #seconds::after {
+        margin-left: 4px;
+    }
+}
+
+@keyframes show {
+    0% {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

@@ -1,0 +1,43 @@
+.header {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    padding-top: 60px;
+    z-index: 2;
+}
+
+.header__logo {
+    cursor: pointer;
+    opacity: 0;
+    transition: 0.3s;
+    animation: show-logo 1s 1;
+    animation-fill-mode: forwards;
+    animation-delay: 0.2s;
+}
+
+@media screen and (max-width: 992px) {
+    .header {
+        padding-top: 100px;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .header {
+        padding-top: 80px;
+    }
+
+    .header__logo_image {
+        width: 128px;
+    }
+}
+
+@keyframes show-logo {
+    0% {
+        transform: translateY(-61px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

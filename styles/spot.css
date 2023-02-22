@@ -1,0 +1,81 @@
+.wrapper {
+    position: relative;
+}
+
+.wrapper::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../assets/image/spot_left.svg") top left no-repeat;
+    opacity: 0;
+    transition: 0.3s;
+    animation: show-left 1s 1;
+    animation-fill-mode: forwards;
+    animation-delay: 0.5s;
+}
+
+.wrapper::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../assets/image/spot_right.svg") top right no-repeat;
+    opacity: 0;
+    transition: 0.3s;
+    animation: show-right 1s 1;
+    animation-fill-mode: forwards;
+    animation-delay: 0.5s;
+}
+
+@media screen and (max-width: 1200px) {
+    .wrapper::before {
+        background: url("../assets/image/spot_left_tablet.svg") top left no-repeat;
+    }
+
+    .wrapper::after {
+        background: url("../assets/image/spot_right_tablet.svg") top right no-repeat;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .wrapper::before {
+        background: url("../assets/image/spot_left_mobile.svg") top left no-repeat;
+    }
+
+    .wrapper::after {
+        background: url("../assets/image/spot_right_mobile.svg") top right no-repeat;
+    }
+}
+
+@keyframes show-left {
+    0% {
+        top: -200px;
+        left: -200px;
+        opacity: 0;
+    }
+    100% {
+        top: 0;
+        left: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes show-right {
+    0% {
+        top: -200px;
+        right: -200px;
+        opacity: 0;
+    }
+    100% {
+        top: 0;
+        right: 0;
+        opacity: 1;
+    }
+}
